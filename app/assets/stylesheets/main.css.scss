@@ -1,0 +1,9 @@
+//Custom variables and overrides
+@import "variables";
+
+//3p
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//Import other files from this one,
+//not application.css
