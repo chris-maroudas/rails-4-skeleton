@@ -1,9 +1,10 @@
-//Custom variables and overrides
-@import "variables";
+//variables to override 3rd-party libs
+@import "override-variables";
 
 //3p
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import jquery.ui.all;
 
-//Import other files from this one,
-//not application.css
+//variables for the app
+@import "variables";
