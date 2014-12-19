@@ -12,6 +12,9 @@ module ApplicationHelper
   end
 
   def stylesheet_exists?(stylesheet)
-    asset_exists?('stylesheets', "#{stylesheet}.css")
+    extensions = %w(.scss .erb .scss.erb) + [""]
+    extensions.inject(false) do |truth, extension|
+      truth || asset_exists?('stylesheets', "#{stylesheet}.css#{extension}")
+    end
   end
 end
