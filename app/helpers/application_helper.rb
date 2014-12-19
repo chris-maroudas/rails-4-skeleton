@@ -8,16 +8,10 @@ module ApplicationHelper
   end
 
   def javascript_exists?(script)
-    extensions = %w(.coffee .erb .coffee.erb) + [""]
-    extensions.inject(false) do |truth, extension|
-      truth || asset_exists?('javascripts', "#{script}.js#{extension}")
-    end
+    asset_exists?('javascripts', "#{script}.js")
   end
 
   def stylesheet_exists?(stylesheet)
-    extensions = %w(.scss .erb .scss.erb) + [""]
-    extensions.inject(false) do |truth, extension|
-      truth || asset_exists?('stylesheets', "#{stylesheet}.css#{extension}")
-    end
+    asset_exists?('stylesheets', "#{stylesheet}.css")
   end
 end
