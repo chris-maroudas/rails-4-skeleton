@@ -4,17 +4,17 @@ Boilerplate for my Rails 4 projects.
 
 # What it comes with
 
-
 ## Back
+1. rails 4.1.6
 1. posgresql
-2. rspec/capybara (with [shoulda](https://github.com/thoughtbot/shoulda))
-3. [whenever](https://github.com/javan/whenever) (cronjobs; define them in config/schedule.rb)
-4. passenger
-5. capistrano
+1. rspec/capybara (with [shoulda](https://github.com/thoughtbot/shoulda))
+1. [whenever](https://github.com/javan/whenever) (cronjobs; define them in config/schedule.rb)
+1. passenger
+1. capistrano
 
 ## Front
 1. bootstrap-sass
-2. jquery-ui-sass-rails
+1. jquery-ui-sass-rails
 
 Also, no Coffeescript (I like my scripts in vanilla js).
 
@@ -40,13 +40,14 @@ In config/production.rb:
 
 In config/deploy.rb, set up your deploy options.
 
-Add capistrano
+Add capistrano tasks in lib/capistrano/tasks to suit your needs.
 
 # Design
 
-In the main layout, application.html.erb, you'll notice a few things:
-  1. Scripts are at the bottom of the body section (not the default head section)
-  2. Scripts/styles unique to each view can be stored in 'app/assets/{javascripts,stylesheets}/$(controller_name)/$(action_name).{js,css}'
-  3. Scripts/styles common to all actions in a controller can be stored in 'app/assets/{javascripts,stylesheets}/$(controller_name).{js,css}'
-  4. Scripts common to the entire application are stored in 'app/assets/javascripts/common'
-  5. Styles common to the entire application are stored in 'app/assets/stylesheets/common' and should be imported in main.css.scss of the same folder
+In the main layout, application.html.erb, you'll notice that
+the body tag gets classed as "controller_name action_name".
+- .controller{} for controller-wide styles.
+- .controller.action{} for action-specific styles.
+- $('.controller').ready(function(){}) for controller-wide scripting.
+- $('.controller.action').ready(function(){}) for action-specific scripting.
+- Global scripts/styles can go anywhere.
