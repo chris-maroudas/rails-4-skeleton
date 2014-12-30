@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -35,6 +35,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Needed for rails 4.2
+gem 'responders', '~> 2.0'
+
 #Bootstrap
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -57,6 +60,10 @@ group :production do
   gem 'capistrano-rvm'
   gem 'capistrano-passenger'
   gem 'exception_notification'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do

@@ -5,7 +5,7 @@ Boilerplate for my Rails 4 projects.
 # What it comes with
 
 ## Back
-1. rails 4.1.6
+1. rails 4.2
 1. posgresql
 1. rspec/capybara (with [shoulda](https://github.com/thoughtbot/shoulda))
 1. [whenever](https://github.com/javan/whenever) (cronjobs; define them in config/schedule.rb)
