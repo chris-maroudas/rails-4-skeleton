@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgresql as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,12 +32,39 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
 #Bootstrap
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
+
+#cron jobs
+gem 'whenever', :require => false
+
+#date/time validations for AR
+gem 'jc-validates_timeliness'
+
+gem 'passenger'
+
+group :production do
+  # because capistrano fails otherwise
+  # http://stackoverflow.com/questions/21560297/capistrano-sshauthenticationfailed-not-prompting-for-password
+  gem 'net-ssh', '2.7.0'
+  gem 'capistrano', '~> 3.3.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
+  gem 'exception_notification'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails', require: false
+  gem 'capybara'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'shoulda'
+end

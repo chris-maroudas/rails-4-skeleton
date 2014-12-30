@@ -7,7 +7,27 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module Rails4Skeleton
-  class Application < Rails::Application
+  class Application < Rails::Application    
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_girl, :dir=>'spec/factories'
+    end
+
+    #Email
+    config.action_mailer.default_url_options = { :host => 'example.com' }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => 'example.com',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true,
+      :user_name            => '',
+      :password             => ''
+    }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -3,23 +3,44 @@
 Boilerplate for my Rails 4 projects.
 
 # What it comes with
-1. [bootstrap-sass](https://rubygems.org/gems/bootstrap-sass)
-2. [jquery-ui-sass-rails](https://rubygems.org/gems/jquery-ui-sass-rails)
 
-# What it doesn't come with
-1. Coffeescript (I like my scripts vanilla)
+
+## Back
+1. posgresql
+2. rspec/capybara (with [shoulda](https://github.com/thoughtbot/shoulda))
+3. [whenever](https://github.com/javan/whenever) (cronjobs; define them in config/schedule.rb)
+4. passenger
+5. capistrano
+
+## Front
+1. bootstrap-sass
+2. jquery-ui-sass-rails
+
+Also, no Coffeescript (I like my scripts in vanilla js).
 
 # How to get started
 
 ```
-git clone git@github.com:adibsaad/rails-4-skeleton.git
+git clone git@github.com:adibsaad/rails-4-skeleton.git app_name
+cd app_name
+rm -rf .git
 ```
 
 Rename these to match your app's name:
-- The folder name
 - The module name in ./config/application.rb.
 - The session store key name in ./config/initializers/session_store.rb.
 - The main layout's title in ./app/views/layouts/application.html.erb.
+- Database name and password in config/database.yml.
+
+In config/application.rb:
+- Change the smtp options to what you want.
+
+In config/production.rb:
+- Configure the exception_notification settings.
+
+In config/deploy.rb, set up your deploy options.
+
+Add capistrano
 
 # Design
 
