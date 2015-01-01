@@ -49,6 +49,7 @@ gem 'whenever', :require => false
 gem 'jc-validates_timeliness'
 
 gem 'passenger'
+gem 'figaro'
 
 group :production do
   # because capistrano fails otherwise
