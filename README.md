@@ -7,7 +7,7 @@ Boilerplate for my Rails 4 projects.
 ## Back
 1. rails 4.2
 1. posgresql
-1. rspec/capybara (with [shoulda](https://github.com/thoughtbot/shoulda))
+1. rspec/capybara/factory_girl/[shoulda](https://github.com/thoughtbot/shoulda)
 1. [whenever](https://github.com/javan/whenever) (cronjobs; define them in config/schedule.rb)
 1. capistrano 3.3.x (nginx/passenger)
 
