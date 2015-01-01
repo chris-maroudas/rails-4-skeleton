@@ -44,7 +44,7 @@ In config/application.rb:
 In config/production.rb:
 - Configure the exception_notification settings.
 
-In config/deploy.rb, set up your deploy options.
+Set up your deploy options in config/deploy.rb and config/deploy/{production,staging}.rb.
 
 Add/alter capistrano tasks in lib/capistrano/tasks to suit your needs.
 
