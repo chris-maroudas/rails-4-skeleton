@@ -59,7 +59,7 @@ Therefore, you can apply specific CSS/JSS by doing the following:
 - $('.controller.action').ready(function(){}) for action-specific scripts.
 - Global scripts/styles can go anywhere.
 
-Note: the Javascript selectors won't work with Turbolinks, unless the jquery-turbolinks is included, which it already is, so don't remove it.
+Note: the Javascript selectors won't work with Turbolinks, unless the jquery-turbolinks gem is included, which it already is, so don't remove it.
 
 # References
 
